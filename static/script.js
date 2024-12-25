@@ -5,7 +5,7 @@ let questionIds = [];
 let questionNumbersInitialized = false;
 
 let timerInterval;
-let timeLeft = 60;
+let timeLeft = 300;
 
 const questionNumbers = document.getElementById('question-numbers');
 const timerDisplay = document.getElementById('timer');
