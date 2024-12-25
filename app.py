@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, g
+from flask import Flask, render_template, request, redirect, g, url_for
 import sqlite3
 
 app = Flask(__name__)
@@ -20,12 +20,22 @@ def close_connection(exception):
 def init_db():
     with app.app_context():
         db = get_db()
-        with app.open_resource('schema.sql', mode='r') as f:
-            db.cursor().executescript(f.read())
-        db.commit()
+        
+        # Check if 'questions' table exists by querying the sqlite_master table
+        cur = db.execute("SELECT name FROM sqlite_master WHERE type='table' AND name='questions';")
+        table_exists = cur.fetchone()
 
-@app.route('/')
-def index():
+        if not table_exists:  # If the 'questions' table doesn't exist, create it
+            with app.open_resource('schema.sql', mode='r') as f:
+                db.cursor().executescript(f.read())
+            db.commit()
+
+@app.route('/')  # Instruction/Consent page
+def instructions():
+    return render_template('instructions.html')
+
+@app.route('/quiz') # Quiz page
+def quiz():  # Corrected function name
     db = get_db()
     cur = db.execute("SELECT * FROM questions")
     questions = cur.fetchall()

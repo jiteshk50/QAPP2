@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Instructions</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #e0eafc, #cfdef3);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .instruction-container {
+            background-color: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            max-width: 700px;
+            width: 90%;
+            text-align: left;
+        }
+        h1{
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        #start-quiz {
+            display: none;
+            margin-top: 20px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="instruction-container">
+        <h1>Quiz Instructions</h1>
+        <p>Please read the following instructions carefully before starting the quiz:</p>
+        <ul>
+            <li>You will have 10 minutes to complete the quiz.</li>
+            <li>Once you start the quiz, the timer will begin.</li>
+            <li>You can mark questions for review and come back to them later.</li>
+            <li>Click "Save & Next" to save your answer and proceed to the next question.</li>
+            <li>Click "Clear Response" to clear your selected answer.</li>
+            <li>Once the time is up or you click "Submit Quiz," your answers will be submitted.</li>
+            <li>You cannot go back to change answers after submitting.</li>
+        </ul>
+
+        <h2>Terms and Conditions</h2>
+        <p>By proceeding with the quiz, you agree to the following terms and conditions:</p>
+        <p>You agree not to cheat or use any external resources during the quiz. You agree that the results of the quiz are for informational purposes only.</p>
+
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="consentCheckbox">
+            <label class="form-check-label" for="consentCheckbox">
+                I have read and agree to the terms and conditions.
+            </label>
+        </div>
+        <a href="{{ url_for('quiz') }}" id="start-quiz" class="btn btn-primary">Begin Quiz</a>
+    </div>
+
+    <script>
+        const consentCheckbox = document.getElementById('consentCheckbox');
+        const startQuizButton = document.getElementById('start-quiz');
+
+        consentCheckbox.addEventListener('change', () => {
+            startQuizButton.style.display = consentCheckbox.checked ? 'block' : 'none';
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
