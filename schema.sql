@@ -29,7 +29,7 @@ INSERT INTO questions (question, option_a, option_b, option_c, option_d, correct
 ('The Union List, the State List, and the Concurrent List are contained in which schedule of the Indian Constitution?', '7th', '8th', '9th', '10th', 'a'),
 ('Which of the following is the "fundamental duty" of every Indian citizen under the Constitution?', 'Right to vote', 'Right to property', 'Right to education', 'To safeguard public property and to abjure violence', 'd'),
 ('The National Emergency in India can be proclaimed under which Article of the Constitution?', 'Article 352', 'Article 356', 'Article 360', 'Article 368', 'a'),
-('The Parliament of India consists of:', 'The President and Lok Sabha only', 'Lok Sabha and Rajya Sabha', 'Lok Sabha, Rajya Sabha, and the President', 'Lok Sabha, Rajya Sabha, and the Chief Justice', 'c'),
+('Which schedule of the Indian Constitution contains provisions related to anti-defection law?', '10th Schedule', '9th Schedule', '7th Schedule', '12th Schedule', 'a'),
 ('The Vice-President of India is elected by:', 'The Lok Sabha', 'The Rajya Sabha', 'An electoral college consisting of members of both houses of Parliament', 'The people of India', 'c'),
 ('Who is the first woman Prime Minister of India?', 'Indira Gandhi', 'Sarojini Naidu', 'Pratibha Patil', 'Sonia Gandhi', 'a'),
 ('Which of the following is a "unique feature" of the Indian Parliament?', 'Bicameral legislature', 'The President as a Member', 'Unicameral legislature', 'None of the above', 'b'),

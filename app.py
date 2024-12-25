@@ -77,5 +77,5 @@ def show_result():
     return render_template('result.html', score=score, total_questions=total_questions)
 
 if __name__ == '__main__':
-    # init_db()
+  #  init_db()
     app.run(debug=True)
